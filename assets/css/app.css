@@ -1,0 +1,78 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.left-panel, .main, .right-panel, .mode {
+    height: 100%;
+    position: absolute;
+}
+.mode{
+    background-color: rgb(55, 55, 88);
+    color: rgb(255, 255, 255);
+    width: 68px;
+    z-index:2;
+    padding:20px 8px;
+}
+.mode .icon{
+    margin: 8px 0px;
+    background-color: #aaaacc;
+    border-radius: 4px;
+}
+
+.mode .icon img{
+    width:100%;
+    -webkit-filter: opacity(50%);
+}
+.mode .icon.active img{
+    -webkit-filter: opacity(100%);
+}
+.mode .icon.active{
+    background-color: #efefff;
+}
+.left-panel, .right-panel {
+    background-color: rgb(77, 77, 120);
+    color: rgb(255, 255, 255);
+    z-index: 1;
+}
+.container{
+    padding: 8px;
+}
+.left-panel{
+    width: 270px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 70px;
+    height: 100%
+}
+
+.right-panel{
+    width: 260px;
+    margin: 0px;
+    right:0px;
+    height: 100%;
+}
+
+
+.main{
+    width: 100%;
+    padding: 0px 300px;
+    margin: 0px;
+    background-color: rgb(200, 200, 230);
+    color: rgb(255, 255, 255);
+}
+.main .heading{
+    margin: 0px;
+    height: 20px;
+    line-height: 20px;
+}
+.draggable{
+    -webkit-app-region: drag;
+}
+.main .heading h4{
+    margin: 0px;
+    line-height: 40px;
+}
+webview{
+    position: relative;
+    z-index: 10000;
+}

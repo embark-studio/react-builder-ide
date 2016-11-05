@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <script>
+        const React = require("react");
+        const ReactDom = require("react-dom");
+        const jQuery = require("react-dom");
+
+
+        const ipcRenderer = require('electron').ipcRenderer
+
+
+    </script>
+</head>
+<body>
+    <script>
+        const nightowl = require("nightowl");
+
+        const fs = require("fs");
+    </script>
+    <div class="mode">
+        <a href="#">
+            <div class="icon active">
+                <img src="./assets/images/react.png" />
+            </div>
+        </a>
+        <a href="#">
+            <div class="icon">
+                <img src="./assets/images/rack.png" />
+            </div>
+        </a>
+    </div>
+    <div class="left-panel">
+        <div class="container">
+            <div class="heading draggable">
+                pages
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="heading draggable"></div>
+        <script>
+            ipcRenderer.on('nightowl.selected', (event, message) => {
+                console.log("RUNNING")
+                console.log(message)
+            })
+        </script>
+        <webview id="canvas" src="./default/index.html"  preload="./default/controller.js">
+
+        </webview>
+        <script>
+            var canvas = document.getElementById("canvas")
+            ipcRenderer.on('project.open', (event, message) => {
+                var data = fs.readFileSync(message[0], "utf8")
+                data = JSON.parse(data)
+
+                canvas.send("render", data)
+            })
+
+            canvas.addEventListener('ipc-message', (event) => {
+                console.log(event)
+                // Prints "pong"
+            })
+
+            canvas.addEventListener('console-message', (e) => {
+                console.log('Canvas:')
+                console.log(e.message)
+            })
+
+        </script>
+    </div>
+    <div class="right-panel">
+        <div class="heading draggable">
+        </div>
+    </div>
+</html>

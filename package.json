@@ -1,0 +1,15 @@
+{
+  "name": "builder-ide",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "nightowl": "1.0.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}

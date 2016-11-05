@@ -1,0 +1,26 @@
+{
+  "elementName":"div",
+  "className":"main {this.state.color}",
+  "style":{
+    "color":"{this.state.color}"
+  },
+  "stores": ["here", "color"],
+  "children":[
+    "Here it is a button {this.state.here}",
+    {
+      "elementName":"button",
+      "children":"Decrease",
+      "onClick": "here.decrease"
+    },
+    {
+      "elementName":"button",
+      "children":"Increase",
+      "onClick": "here.increase"
+    },
+    {
+      "elementName":"button",
+      "children":"Dark",
+      "onClick": "here.dark"
+    }
+  ]
+}
